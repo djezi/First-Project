@@ -1,0 +1,43 @@
+<div class="container"> 
+  <div class="card shadow mb-4">                    
+    <div class="card-body">  
+      
+
+      <h3 class="mb-3 text-primary">Nombre total : {{ voitures.length }}</h3>
+
+      <table class="table table-striped"> 
+        @if (voitures.length > 0) {
+          <thead>
+            <tr> 
+              <th>N°</th>
+              <th>Id</th>
+              <th>Nom</th> 
+              <th>Prix</th> 
+              <th>Date Création</th> 
+            </tr>
+          </thead>
+        }
+        
+        <tbody> 
+          @for (voiture of voitures; track voiture.idVoiture; let index = $index) {
+            <tr> 
+              <td>{{ index + 1 }}</td>
+              <td>{{ voiture.idVoiture }}</td> 
+              <td>{{ voiture.nomVoiture }}</td> 
+              <td>{{ voiture.prixVoiture }}</td> 
+              <td>{{ voiture.dateCreation | date:'dd/MM/yyyy' }}</td> 
+            </tr>          
+          } 
+          
+          @empty {
+            <tr>
+              <td colspan="5" class="text-center py-4">
+                <h4 class="text-danger">Aucune voiture trouvée !</h4>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table> 
+    </div> 
+  </div> 
+</div>
