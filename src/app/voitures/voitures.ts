@@ -15,9 +15,9 @@ export class Voitures implements OnInit{
   voitures:Voiture[];
   constructor(private voitureservice:Voitureservice) {
   this.voitures=voitureservice.listVoiture();
+  console.log(this.voitures[0]);
   }
   ngOnInit(): void {
-      
   }
   supprimer(v:Voiture){
     let conf = confirm("Êtes-vous sûr de vouloir supprimer?");
