@@ -54,11 +54,13 @@ export class Voitureservice {
         }
     }
     listeCategorie():Categorie[]{
-        console.log(this.categorie[0].idCat,this.categorie[0].nomCat);
         return this.categorie;
     }
     consulterCategorie(id:number): Categorie{     
         return this.categorie.find(cat => cat.idCat  == id)!; 
+    } 
+    rechercherParCategorie(idCat: number): Voiture[] {
+            return this.voitures.filter(v => v.categorie && v.categorie.idCat == idCat);
     } 
     
 }
