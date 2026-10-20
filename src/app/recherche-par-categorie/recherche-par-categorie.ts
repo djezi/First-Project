@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'; // ضروري لـ routerLink
+import { RouterModule } from '@angular/router'; 
 import { Voiture } from '../model/voiture.model';
 import { Categorie } from '../model/categorie.model';
 import { Voitureservice } from '../services/voiture';
@@ -9,7 +9,7 @@ import { Voitureservice } from '../services/voiture';
 @Component({
   selector: 'app-recherche-par-categorie',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule], // أضفنا RouterModule هنا
+  imports: [CommonModule, FormsModule, RouterModule], 
   templateUrl: './recherche-par-categorie.html'
 })
 export class RechercheParCategorie implements OnInit {
